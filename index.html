@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magdalena's Portfolio</title>
     <link rel="stylesheet" href="./style.css">
-    <link href='https://css.gg/file-document.css' rel='stylesheet'>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
 <body>
     <div class="nav nav-scrolled">
@@ -18,7 +19,6 @@
             </div>
             <div class="navbar">
                 <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
                 <a href="#certificates">Certifications</a>
                 <a href="#footer">Contact</a>
             </div>
@@ -56,136 +56,200 @@
             </div>
         </div>
     </div>
-    <div id="projects">
-        <h2>
-            <span>Check out my latest</span>
-            <br/>
-            Projects
-        </h2>
-        <div class="swiper mySwiper container">
-            <div class="swiper-wrapper content">
-                <div class="swiper-slide card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img src="./img-src/ozora-resto.png" alt="">
+    <div class="mid-1">
+       <div id="projects">
+            <h2>
+                <span>Check out my latest</span>
+                <br/>
+                Projects
+            </h2>
+            <section class="project-contents">
+                <div class="swiper mySwiper container">
+                    <div class="swiper-wrapper content"> 
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="./img-src/ozora-resto.png" alt="">
+                                </div>
+                            
+                                <div class="tools">
+                                    <ul class="tool-tags">
+                                        <li>
+                                            <p>Photoshop</p>
+                                        </li>
+                                        <li>
+                                            <p>HTML</p>
+                                        </li>
+                                        <li>
+                                            <p>CSS</p>
+                                        </li>
+                                    </ul>
+                                </div>
+        
+                                <div class="project-name-desc">
+                                    <span class="name">Ozora Resto</span>
+                                    <br/>
+                                    <span class="project-desc">
+                                        <p>An internship project; i designed and built a 
+                                        restaurant web based on the theme winter.</p>
+                                    </span>
+                                </div>
+        
+                                <div class="button">
+                                    <a href="https://magdalenaraa.github.io/ozora-resto/">
+                                       <button class="view">Live View</button> 
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-
-                        <h6>Ozora Resto</h6>
-      
-                        <div class="tools">
-                            <ul class="tool-tags">
-                                <li>
-                                    <p>Photoshop</p>
-                                </li>
-                                <li>
-                                    <p>HTML</p>
-                                </li>
-                                <li>
-                                    <p>CSS</p>
-                                </li>
-                            </ul>
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="./img-src/storyteller.png" alt="">
+                                </div>
+        
+                                <div class="tools">
+                                    <ul class="tool-tags">
+                                        <li>
+                                            <p>HTML</p>
+                                        </li>
+                                        <li>
+                                            <p>CSS</p>
+                                        </li>
+                                    </ul>
+                                </div>
+        
+                                <div class="project-name-desc">
+                                    <span class="name">StoryTeller</span>
+                                    <br/>
+                                    <span class="project-desc">
+                                        <p>An internship project; i built a TTRPG web 
+                                        based on a design that was already available.</p>
+                                    </span>
+                                </div>
+        
+                                <div class="button">
+                                    <a href="https://magdalenaraa.github.io/storyteller/">
+                                       <button class="view">Live View</button> 
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="project-desc">
-                            <p>An internship project; i designed and built a 
-                                <br/>
-                                restaurant web based on the theme winter.</p>
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="./img-src/glamhub.png" alt="">
+                                </div>
+        
+                                <div class="tools">
+                                    <ul class="tool-tags">
+                                        <li>
+                                            <p>Figma</p>
+                                        </li>
+                                    </ul>
+                                </div>
+        
+                                <div class="project-name-desc">
+                                    <span class="name">GlamHub</span>
+                                    <br/>
+                                    <span class="project-desc">
+                                        <p>A class  project where we need to make a business 
+                                        product and build a prototype of the product. </p>
+                                    </span>
+                                </div>
+        
+                                <div class="button">
+                                    <a href="https://drive.google.com/file/d/1W-yJ5SPP1pymfbcxgqxSw3nYGKf718BF/view?usp=sharing">
+                                        <button class="view">View More</button>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-      
-                        <div class="button">
-                            <a href="https://magdalenaraa.github.io/ozora-resto/" class="view-btn">Live View</a>
+                        <div class="swiper-slide card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img src="./img-src/S__106676226.jpg" alt="">
+                                </div>
+        
+                                <div class="tools">
+                                    <ul class="tool-tags">
+                                        <li>
+                                            <p>Photoshop</p>
+                                        </li>
+                                        <li>
+                                            <p>Adobe Fresco</p>
+                                        </li>
+                                    </ul>
+                                </div>
+        
+                                <div class="project-name-desc">
+                                    <span class="name">Personal Designs</span>
+                                    <br/>
+                                    <span class="project-desc">
+                                        <p>Here are some of my personal works of digital 
+                                        designs that are published on my instagram art account.</p>
+                                    </span>
+                                </div>
+        
+                                <div class="button">
+                                    <a href="https://instagram.com/amaiimo?igshid=YmMyMTA2M2Y=">
+                                        <button class="view">View More</button>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img src="./img-src/storyteller.png" alt="">
-                        </div>
-    
-                        <h6>StoryTeller</h6>
-          
-                        <div class="tools">
-                            <ul class="tool-tags">
-                                <li>
-                                    <p>HTML</p>
-                                </li>
-                                <li>
-                                    <p>CSS</p>
-                                </li>
-                            </ul>
-                        </div>
-    
-                        <div class="project-desc">
-                            <p>An internship project; i built a TTRPG web 
-                                <br/>
-                                based on a design that was already available.</p>
-                        </div>
-          
-                        <div class="button">
-                            <a href="https://magdalenaraa.github.io/storyteller/" class="view-btn">Live View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img src="./img-src/glamhub.png" alt="">
-                        </div>
-    
-                        <h6>GlamHub</h6>
-          
-                        <div class="tools">
-                            <ul class="tool-tags">
-                                <li>
-                                    <p>Figma</p>
-                                </li>
-                            </ul>
-                        </div>
-    
-                        <div class="project-desc">
-                            <p>A class  project where we need to make a 
-                                <br/>
-                                business product and build a prototype of...</p>
-                        </div>
-          
-                        <div class="button">
-                            <a href="#" class="view-btn">View More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide card">
-                    <div class="card-content">
-                        <div class="card-img">
-                            <img src="./img-src/S__106676226.jpg" alt="">
-                        </div>
-    
-                        <h6>Personal Designs</h6>
-          
-                        <div class="tools">
-                            <ul class="tool-tags">
-                                <li>
-                                    <p>Photoshop</p>
-                                </li>
-                                <li>
-                                    <p>Adobe Fresco</p>
-                                </li>
-                            </ul>
-                        </div>
-    
-                        <div class="project-desc">
-                            <p>Here are some of my personal works of digital designs
-                                <br/>
-                                that are published on my instagram art account.</p>
-                        </div>
-          
-                        <div class="button">
-                            <a href="#" class="view-btn">View More</a>
-                        </div>
-                    </div>
-                </div>
+        
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </section>
+        </div> 
+    </div>
+    <div class="mid-2">
+        <div id="certifications">
+            <h2>Certifications</h2>
+            <div class="dm">
+                <a href="#">
+                    <button class="certif">
+                        The Fundementals of Digital Marketing
+                        <br/>
+                        <span class="institution">Google Digital Garage</span>
+                    </button>
+                </a>
+            </div>
+            <div class="jlpt">
+                <a href="#">
+                    <button class="certif">
+                        Japanese Language Profiency Test N3
+                        <br/>
+                        <span class="institution">The Japan Foundation</span>
+                    </button>
+                </a>
             </div>
         </div>
     </div>
+    <div id="contact">
+        <div class="footer-contact">
+            <h2>Get in touch!</h2>
+            <p>
+                <span class="personal-name">Magdalena Radanty Putri H.</span>
+                <br/>
+                magdalenaradanty@gmail.com
+                (+62) 85173347129
+            </p>
+        </div>
+        <div class="logo-creds">
+            <img src="./img-src/logo-portfolio-ver2.png">
+            <p> © Magdalena Ra 2023</p>
+        </div>
+    </div>
+    
+    
+
+    <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <script src="./script.js"></script>
 </body>
 </html>
