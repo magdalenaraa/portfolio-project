@@ -398,7 +398,7 @@ body {
     justify-content: space-between;
     background: #3a2d28;
     padding: 55px 130px;
-    height: 250px;
+    height: 300px;
     margin-top: 300px;
 }
 .contact-info h2 {
@@ -409,6 +409,7 @@ body {
     color: #ede9e3;
     padding-bottom: 20px;
     border-bottom: #d9c1a4 solid 2px;
+    margin-top: 20px;
 }
 .contact-info p {
     color: #ede9e3;
@@ -431,6 +432,27 @@ body {
     text-align: right;
     margin-top: 50px;
 }
+.socmed {
+    margin:0;
+    padding:0;
+    display:flex;
+    z-index: 10;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+.socmed img {
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.socmed a {
+    text-decoration: none;
+  }
+  
+
+
   
   
 
