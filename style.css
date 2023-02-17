@@ -390,6 +390,48 @@ body {
     opacity: 1;
     color: #3a2d28;
   }
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #3a2d28;
+    padding: 55px 130px;
+    height: 250px;
+    margin-top: 300px;
+}
+.contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: 600;
+    color: #ede9e3;
+    padding-bottom: 20px;
+    border-bottom: #d9c1a4 solid 2px;
+}
+.contact-info p {
+    color: #ede9e3;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 1.5;
+}
+.contact-info p span {
+    font-weight: 500;
+}
+.logo-creds img {
+    margin-bottom: 20px;
+    float: right;
+}
+.logo-creds p  {
+    color: #ede9e3;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: right;
+    margin-top: 50px;
+}
+  
   
 
 
