@@ -188,11 +188,10 @@ body {
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    width: 90%;
     padding: 60px;
     display: flex;
     justify-content: space-around;
-    gap: 50px;
+    gap: 45px;
 }
 .about-paragraph h2 {
     font-family: 'Playfair Display', serif;
@@ -211,32 +210,42 @@ body {
     text-align: justify;
     line-height: 1.5;
 }
-.resume-btn {
-    text-decoration: none;
-    color: #3a2d28;
-    background-color: #ede9e3;
-    border-radius: 15px;
-    font-family: 'Josefin Sans', sans-serif;
-    padding: 20px 40px;
-    font-weight: 700;
+
+.about-paragraph h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: 500;
+    color: #ede9e3;
+}
+
+.skills {
+    padding-top: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 20px;
 }
-.resume-btn::before {
-    content: "";
-    background: url(./img-src/icons8-downloading-updates-26\ \(1\).png) no-repeat 0 0;
-    background-size: cover;
-    width: 18px;
-    height: 18px;
-    margin-right: 4px;
-    display: inline-block;
-    vertical-align: middle;
+.Photoshop img {
+    width: 60;
+    height: 60;
 }
-.resume-btn:hover {
-    box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.43);
-    -webkit-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.43);
-    -moz-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.43);
-    cursor: pointer;
+.Figma img {
+    width: 60;
+    height: 60;
+}
+.Illustrator img {
+    width: 60;
+    height: 60;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.skills p {
+    margin: 0 auto;
+    text-align: center;
 }
 
 .mid-1 {
@@ -332,7 +341,7 @@ body {
     text-align: justify;
     font-weight: 500;
   }
-  
+
   .card .tools{
       display: flex;
       flex-direction: column;
@@ -373,6 +382,7 @@ body {
     padding: 8px 22px;
     border-radius: 10px;
     font-size: 14px;
+    font-family: 'Josefin Sans', sans-serif;
     transition: all 0.3s ease;
     cursor: pointer;
   }
@@ -380,10 +390,15 @@ body {
   .button button:hover{
     background: #3a2d28e3;
   }
-  
-  .swiper-button-next, .swiper-button-prev{
-    opacity: 0.7;
-    color: #3a2d28;
+ 
+  .swiper-button-next, .swiper-button-prev:root {
+    --swiper-theme-color:
+    #3a2d28;
+    transition: all 0.3s ease;
+  }
+  .swiper-button-prev, .swiper-button-next:root {
+    --swiper-theme-color:
+    #3a2d28;
     transition: all 0.3s ease;
   }
   .swiper-button-next:hover, .swiper-button-prev:hover{
