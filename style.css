@@ -126,7 +126,7 @@ body {
     font-size: 20px;
     margin-top: 25px;
     margin-bottom: 40px;
-    line-height: 1;
+    line-height: 1.5;
 }
 .abt-button a {
     text-decoration: none;
@@ -342,6 +342,10 @@ body {
     font-weight: 500;
   }
 
+  .project-name-desc .project-desc p{
+    padding-top: 8px;
+  }
+
   .card .tools{
       display: flex;
       flex-direction: column;
@@ -360,7 +364,7 @@ body {
   }
   .card .tools p {
       background: #f8f3ea;
-      padding: 3px 7px;
+      padding: 4px 7px 4px;
       border: #3a2d28 1px solid;
       border-radius: 10px;
       font-size: 10px;
