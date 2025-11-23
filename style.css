@@ -108,15 +108,53 @@ body {
 }
 .home-text h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 60px;
+    font-size: 80px;
     color: #3a2d28;
     font-weight: 700;
     margin: 10px 0px 25px;
     line-height: 1;
+    position: relative;
+    display: flex;
+    gap: 10px; /* adjust spacing */
 }
+
+.home-text h1 b {
+  float: right; 
+  overflow: hidden;       /* very important */
+  height: 65px;           /* match line height / font-size */
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.home-text h1 span {
+  display: inline-block;
+  color: #e74c3c;
+  position: relative;
+  white-space: nowrap;
+  animation: move 15s infinite;
+  font-size: 65px;
+  letter-spacing: 2px;
+  line-height: 64px;
+}
+
+@keyframes move {
+  0%   { top:   0px; }
+  11%  { top: -64px; }
+  22%  { top: -128px; }
+  33%  { top: -192px; }
+  44%  { top: -256px; }
+  55%  { top: -320px; }
+  66%  { top: -384px; }
+  77%  { top: -448px; }
+  88%  { top: -512px; }
+  88%  { top: -512px; }
+  100% { top:   0px; }
+}
+
 .home-text h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 35px;
+    font-size: 40px;
     color: #3a2d28;
     font-style: italic;
     font-weight: 600;
