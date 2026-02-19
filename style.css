@@ -112,22 +112,24 @@ body {
 .inside_items{
   display: none;
   position: absolute;
-  top:70px;
-  left: 0px;
+  top:80px;
+  left: 45px;
 }
 
 .inside_items li{
-  height: 50px;
   line-height: 50px;
   padding: 0 30px;
   background-color: #fff3f3;
+  list-style: none;
 }
 .inside_items li:hover{
   background-color: #E9CDCA;
 }
 
-.inside_items li a {
+.nav-wrapper .navbar .inside_items ul > li a {
   padding: 0;
+  text-decoration: none;
+  transition: none;
 }
 
 li:hover .inside_items{
@@ -138,6 +140,11 @@ a{
 	color:black;
 	font-size: 25px;
 }
+
+.nav-wrapper .navbar .show ul > li a {
+  transition: none;
+}
+
 .show::after{
       content: '';
       width: 0;
