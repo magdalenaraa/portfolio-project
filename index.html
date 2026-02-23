@@ -51,13 +51,15 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#footer">Contact</a></li>
-                <li><a href="#">Language</a>
-                    <div class="inside_items">
-					    <ul>
-						    <li> <a href="#home">EN</a></li>
-						    <li> <a href="./jp/index.html">JP</a></li>
+                <li class="language-item">
+                    <input type="checkbox" id="lang-toggle">
+                    <label for="lang-toggle" class="language-label">
+                        Language ▼
+                    </label>
+                        <ul class="inside_items_2">
+                            <li><a href="#home">EN</a></li>
+                            <li><a href="./jp/index.html">JP</a></li>
                         </ul>
-                    </div>
                 </li>
             </ul>
         </nav>
@@ -410,5 +412,16 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
   <script src="./script.js"></script>
+
+  <script>
+    const burgerToggle = document.getElementById("burger-toggle");
+    const navLinks = document.querySelectorAll(".nav-menu a");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            burgerToggle.checked = false;
+        });
+    });
+</script>
 </body>
 </html>
