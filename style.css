@@ -425,7 +425,7 @@ a{
 }
 .home-img img {
     max-width: 100%;
-    width: 450px;
+    width: 550px;
     height: auto; 
 }
 
@@ -693,6 +693,70 @@ a{
     display: flex;
     align-items: center;
   }
+
+  .project-list {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-contents .project-row {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex; /* This makes the row respect its content's height */
+  border-bottom: 1px solid #333;
+   padding-top: 0;
+}
+
+.project-row {
+  display: flex;
+  justify-content: space-between; /* Pushes left and right content apart */
+  align-items: baseline; /* Aligns number with the bottom of the text */
+  padding: 2rem 0 0;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--border-color);
+  transition: opacity 0.3s ease;
+}
+
+
+.project-row:hover {
+  opacity: 0.7;
+}
+
+.left-content {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem; /* Space between "01" and "Title" */
+}
+
+.project-number {
+  font-size: 1.2rem;
+  font-weight: 300;
+  min-width: 2rem; /* Keeps numbers aligned even if they change width */
+}
+
+.project-contents .project-title h3 {
+  /* clamp(min, preferred, max) makes text responsive without media queries */
+  font-size: clamp(2.5rem, 8vw, 5rem); 
+  margin: 0;
+  font-weight: 400;
+  padding-top: 0;
+}
+
+.arrow {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+  .left-content {
+    gap: 0.8rem;
+  }
+  .project-row {
+    padding: 1.5rem 0;
+  }
+}
   
   .swiper{
     width: 950px;
