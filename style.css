@@ -699,62 +699,80 @@ a{
   margin: 0 auto;
 }
 
-.project-contents .project-row {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  display: flex; /* This makes the row respect its content's height */
-  border-bottom: 1px solid #333;
-   padding-top: 0;
+.project-row h3 {
+  font-size: 30px;
 }
 
 .project-row {
+  position: relative;
   display: flex;
-  justify-content: space-between; /* Pushes left and right content apart */
-  align-items: baseline; /* Aligns number with the bottom of the text */
-  padding: 2rem 0 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 30px;
   text-decoration: none;
-  color: inherit;
-  border-bottom: 1px solid var(--border-color);
-  transition: opacity 0.3s ease;
+  color: #1a1a1a; /* Dark text */
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  overflow: hidden; /* Keeps the zoomed image inside the row */
+  transition: color 0.3s ease;
+}
+.project-row::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px) brightness(0.9); /* Initial Blur & slight darkness */
+  z-index: -1; /* Puts image behind text */
+  transition: transform 0.6s ease, filter 0.6s ease;
+  transform: scale(1); /* Starting size */
 }
 
+.project-row:hover::before {
+  transform: scale(1.1); /* Zooms the image in slightly */
+  filter: blur(5px) brightness(0.6); /* Gets darker and slightly clearer */
+}
 
 .project-row:hover {
-  opacity: 0.7;
+  color: #ffffff; /* Optional: Make text white when background gets dark */
 }
 
-.left-content {
+.project-left {
   display: flex;
   align-items: baseline;
-  gap: 1.5rem; /* Space between "01" and "Title" */
+  gap: 20px;
 }
 
-.project-number {
-  font-size: 1.2rem;
+.number {
+  font-size: 1.5rem;
   font-weight: 300;
   min-width: 2rem; /* Keeps numbers aligned even if they change width */
 }
 
-.project-contents .project-title h3 {
-  /* clamp(min, preferred, max) makes text responsive without media queries */
-  font-size: clamp(2.5rem, 8vw, 5rem); 
+
+.title {
+  font-size: clamp(1.5rem, 4vw, 3rem); /* Responsive text size */
   margin: 0;
-  font-weight: 400;
-  padding-top: 0;
+  font-weight: 600;
 }
 
+/* 4. The Arrow Nudge */
 .arrow {
   font-size: 2rem;
-  font-weight: 200;
+  transition: transform 0.3s ease;
 }
 
-/* Mobile Adjustments */
+.project-row:hover .arrow {
+  transform: translateX(15px); /* Moves arrow slightly to the right */
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 600px) {
-  .left-content {
-    gap: 0.8rem;
-  }
   .project-row {
-    padding: 1.5rem 0;
+    padding: 25px 15px;
+  }
+  .project-left {
+    gap: 10px;
   }
 }
   
