@@ -69,16 +69,16 @@
             <h3>Hello, I'm Rara!</h3>
             <h1>I
                 <b>
-                    <span>
-                        &nbsp;design<br /> 
-                        &nbsp;illustrate<br />
-                        &nbsp;create<br />
-                        &nbsp;develop<br />
-                        &nbsp;visualize<br />
-                        &nbsp;learn<br />
-                        &nbsp;tell stories<br />
-                        &nbsp;explore<br />
-                        &nbsp;adapt<br />
+                    <span id="ticker-target">
+                        <div class="ticker-item">&nbsp;design</div>
+                        <div class="ticker-item">&nbsp;illustrate</div>
+                        <div class="ticker-item">&nbsp;create</div>
+                        <div class="ticker-item">&nbsp;develop</div>
+                        <div class="ticker-item">&nbsp;visualize</div>
+                        <div class="ticker-item">&nbsp;adapt</div>
+                        <div class="ticker-item">&nbsp;learn</div>
+                        <div class="ticker-item">&nbsp;tell stories</div>
+                        <div class="ticker-item">&nbsp;explore</div>
                     </span>
                 </b>
             </h1>`
@@ -143,7 +143,7 @@
             <div id="projectsReal">
                 <div class="project-container">
                     <a href="#" class="project-row" style="--bg-image: url('path-to-your-image1.jpg');">
-                        <div class="project-left">
+                        <div class="project-left" style="padding-top: 40px;">
                             <span class="number">01</span>
                             <h3 class="title">Professional Projects</h3>
                         </div>
@@ -196,6 +196,31 @@
 
   <script src="./script.js"></script>
 
+  <script>
+    const ticker = document.getElementById('ticker-target');
+    const items = document.querySelectorAll('.ticker-item');
+    const stepHeight = items[0].offsetHeight; // Automatically gets the height of one item
+    const totalItems = items.length - 1; // Subtract 1 because of the clone
+    let count = 0;
+
+    function slide() {
+    count++;
+  
+    ticker.style.transition = "transform 0.5s cubic-bezier(0.65, 0, 0.35, 1)";
+    ticker.style.transform = `translateY(-${count * stepHeight}px)`;
+
+    if (count === totalItems) {
+        setTimeout(() => {
+        ticker.style.transition = "none";
+        count = 0;
+        ticker.style.transform = `translateY(0)`;
+        }, 500); // Match this to your transition time
+    }
+    }
+
+    setInterval(slide, 2500);
+  </script>
+    
   <script>
     const burgerToggle = document.getElementById("burger-toggle");
     const navLinks = document.querySelectorAll(".nav-menu a");
