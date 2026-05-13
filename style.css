@@ -293,6 +293,11 @@ a{
   
 }
 
+.nav-wrapper .navbar> ul >li .language-item {
+  transition: none;
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
 
   #burger-toggle:checked ~ .nav-menu {
@@ -363,48 +368,41 @@ a{
     padding-left: 50px;
 }
 
+#js-ticker-roll span {
+  display: flex;
+  flex-direction: row; /* Changed from column */
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  width: max-content;   /* Crucial: lets the row be as wide as all words combined */
+}
+
 .home-text h1 {
   font-family: 'Playfair Display', serif;
   font-size: 80px;
   color: #3a2d28;
   font-weight: 700;
   height: 100px; /* Adjust this once to fit your biggest word */
-  overflow: hidden; /* Hides the other words */
-  line-height: 1;      /* This collapses that purple box to just the text */
-  display: flex;
-  align-items: center; /* This is the "Auto-Layout" vertical center */
-  margin-bottom: 20px;
-}
-
-/* Give each line a consistent height so the math stays simple */
-.ticker-item {
-  height: 100px; /* MUST match the h1 height exactly */
+  overflow: hidden;
   display: flex;
   align-items: center;
-  white-space: nowrap;
+  white-space: nowrap; 
+  width: 400px; /* Adjust this to fit your longest word like "visualize" */
 }
 
-#js-ticker-roll span {
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-/* Give each line a consistent height so the math stays simple */
 .ticker-item {
-  height: 78px; /* Must match the H1 height above */
+  width: 400px; /* Every 'slot' must be the same width now, not height */
+  flex-shrink: 0; /* Prevents words from squishing */
   display: flex;
-  align-items: center;
-  white-space: nowrap;
+  justify-content: flex-start; /* Keeps text aligned to the "I" */
 }
 
 .home-text h1 b {
   float: right; 
   overflow: hidden;       /* very important */
-  height: 65px;           /* match line height / font-size */
+  height: 90px;         /* match line height / font-size */
   position: relative;
   display: inline-block;
   vertical-align: bottom;
+  padding-top: 16px;
 }
 
 .home-text h1 span {

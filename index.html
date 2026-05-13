@@ -51,7 +51,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#projectsReal">Projects</a></li>
                 <li><a href="#footer">Contact</a></li>
-                <li class="language-item">
+                <li class="language-item" style="text-decoration: none;">
                     <input type="checkbox" id="lang-toggle">
                     <label for="lang-toggle" class="language-label">
                         Language ▼
@@ -79,9 +79,11 @@
                         <div class="ticker-item">&nbsp;learn</div>
                         <div class="ticker-item">&nbsp;tell stories</div>
                         <div class="ticker-item">&nbsp;explore</div>
+                        <div class="ticker-item">&nbsp;design</div>
                     </span>
                 </b>
             </h1>`
+            <br>
             <br>
             <div class="abt-button">
                 <a href="#introduction" class="btn">Get to know me better</a>
@@ -199,26 +201,29 @@
   <script>
     const ticker = document.getElementById('ticker-target');
     const items = document.querySelectorAll('.ticker-item');
-    const stepHeight = items[0].offsetHeight; // Automatically gets the height of one item
-    const totalItems = items.length - 1; // Subtract 1 because of the clone
-    let count = 0;
 
-    function slide() {
-    count++;
-  
-    ticker.style.transition = "transform 0.5s cubic-bezier(0.65, 0, 0.35, 1)";
-    ticker.style.transform = `translateY(-${count * stepHeight}px)`;
+    // Now we measure width instead of height
+    const slotWidth = items[0].offsetWidth; 
+    const totalItems = items.length - 1; 
+    let currentIndex = totalItems; 
 
-    if (count === totalItems) {
-        setTimeout(() => {
-        ticker.style.transition = "none";
-        count = 0;
-        ticker.style.transform = `translateY(0)`;
-        }, 500); // Match this to your transition time
+    function startRolling() {
+    currentIndex--;
+
+    ticker.style.transition = "transform 0.5s ease-in-out";
+    // Change translateY to translateX
+    ticker.style.transform = `translateX(-${currentIndex * slotWidth}px)`;
+
+    if (currentIndex === 0) {
+    setTimeout(() => {
+      ticker.style.transition = "none";
+      currentIndex = totalItems;
+      ticker.style.transform = `translateX(-${currentIndex * slotWidth}px)`;
+    }, 500); 
     }
     }
 
-    setInterval(slide, 2500);
+    setInterval(startRolling, 2500);
   </script>
     
   <script>
