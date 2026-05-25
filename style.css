@@ -380,8 +380,117 @@ a{
 }
 
 .home-text {
-    width: 50%;
-    padding-left: 50px;
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Keeps text left-aligned on desktop */
+}
+
+.web_hero_image {
+    display: block; /* Visible on desktop */
+    max-width: 100%;
+    height: auto;
+}
+
+.sp_hero_image {
+    display: none; /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  #home.top {
+        display: flex !important;
+        flex-direction: column !important; /* Normal top-to-bottom stack */
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;    /* Forces all inner heading text to center */
+        padding: 40px 20px !important;
+        gap: 20px !important;
+    }
+
+    /* 3. Force the text container to sit underneath the image */
+    #home .home-text {
+        display: block !important;
+        position: relative !important;    /* Keeps your current layout requirement intact */
+        text-align: left !important;      /* Left aligns text just like your wireframe design */
+        max-width: 85% !important;        /* Prevents your text headings from hitting the image */
+        z-index: 2 !important;            /* Ensures text stays crisp on top */
+    }
+
+    /* 4. Ensure headings inside follow the centering rule */
+    #home .home-text h3,
+    #home .home-text h1 {
+        text-align: left !important;
+        width: 100% !important;
+        justify-content: center !important;
+        font-size: 55px;
+    }
+
+    #home .home-text h3.desktop-only {
+        display: none !important;
+    }
+
+    .home-text h1 b span {
+    display: inline-block;
+    color: #3a2d28;
+    position: relative;
+    white-space: nowrap;
+    animation: move 15s infinite;
+    font-size: 55px;
+    letter-spacing: 2px;
+    line-height: 64px;
+    padding-top: 0;
+  }
+
+    #home .home-text h1 b {
+      padding-top: 12px;
+    }
+
+    /* 2. Explicitly target the class to pull it back into view */
+    #home .home-text h3.mobile-only {
+        font-size: 36px !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+        display: block;
+        font-family: 'Playfair Display', serif;
+        font-size: 40px;
+        color: #3a2d28;
+        font-style: italic;
+    }
+
+    #home .home-text h3.mobile-only br.force-break {
+        display: inline !important;
+    }
+
+    /* 5. Hide the desktop breaks to prevent strange vertical space gaps */
+    #home .home-text br {
+        display: none !important;
+    }
+
+    #home .abt-button a {
+        margin-top: 25px !important;     /* Clean, intentional mobile button spacing */
+        font-size: 14px;
+    }
+
+    #home .home-img {
+        position: absolute !important;   /* Breaks it out so it overlays on top */
+        
+        /* MANUALLY CONTROL THE POSITION HERE: */
+        top: 160px !important;
+        right: 50px !important;
+        width: 156px !important;
+        transform: rotate(-12deg) !important;
+        
+        z-index: 10 !important;          /* Keeps it floating safely on the very top layer */
+    }
+
+    /* 2. Standard toggle setup to ensure mobile image shows */
+    .web_hero_image {
+        display: none !important;
+    }
+    .sp_hero_image {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+    }
 }
 
 #js-ticker-roll span {
@@ -432,7 +541,12 @@ a{
   line-height: 64px;
 }
 
-.home-text h3 {
+.home-text h3.mobile-only {
+  display: none;
+}
+
+.home-text h3.desktop-only {
+    display: block;
     font-family: 'Playfair Display', serif;
     font-size: 40px;
     color: #3a2d28;
