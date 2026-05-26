@@ -272,7 +272,8 @@ a{
   text-decoration: none;
   display: block;
   padding: 15px;
-  font-weight: 500;
+  font-weight: 300;
+  font-size: 23px;
   position: relative;
   overflow: hidden;
 }
@@ -331,7 +332,8 @@ a{
     cursor: pointer;
     padding: 15px;
     color: white;
-    font-size: 25px;
+    font-weight: 300;
+    font-size: 23px;
   }
 
   .inside_items_2 {
