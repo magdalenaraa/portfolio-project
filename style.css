@@ -512,9 +512,9 @@ a{
 
     #home .home-img {
         position: absolute !important;
-        top: 210px !important;
+        top: 200px !important;
         right: 54px !important;
-        width: 174px !important;
+        width: 180px !important;
         transform: rotate(-12deg) !important;
         z-index: 10 !important;
     }
