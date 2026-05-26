@@ -626,7 +626,7 @@ a{
 @media (max-height: 926px) {  
     #home .home-img {
         /* If you are using the Absolute Positioning code: */
-        top: 280px !important;            /* Lower or raise this pixel number to change its height position */
+        top: 159px !important;            /* Lower or raise this pixel number to change its height position */
         /* If you want to force the size smaller/larger just for this phone: */
         width: 164px !important; 
         right: 54px !important;        /* Adjust this until it fits perfectly next to your text */
