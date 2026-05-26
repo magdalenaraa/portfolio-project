@@ -998,7 +998,7 @@ a{
 
 @media (max-width: 768px) {
   #projects h2{
-    padding-top: 440px;
+    padding-top: 470px;
   }
 }
 
@@ -1080,6 +1080,12 @@ a{
 
 .project-row:hover .arrow {
   transform: translateX(15px); /* Moves arrow slightly to the right */
+}
+
+@media (max-width: 600px) {
+  .project-row h3 {
+    font-size: 20px;
+}
 }
 
 /* Mobile Responsiveness */
