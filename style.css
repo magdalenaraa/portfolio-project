@@ -701,9 +701,9 @@ a{
     margin-top: 20px;
 }
 .abt-button a:hover {
-    box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.43);
-    -webkit-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.43);
-    -moz-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.43);
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.205);
+    -webkit-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.205);
+    -moz-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.205);
     cursor: pointer;
 }
 
