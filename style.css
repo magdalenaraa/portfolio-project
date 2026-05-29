@@ -430,14 +430,15 @@ a{
     #home .home-text h3.desktop-only {
         display: none !important;
     }
-
-   #home .home-text img.mobile-only.greeting-image {
+/* Target the class directly on its own layer to force a size override */
+img.greeting-image {
         display: block !important;
-        width: 50% !important;           /* Lowered from 75% to shrink it down to size */
-        max-width: 140px !important;     /* Hard ceiling so it matches your inspect look exactly */
-        height: auto !important;         /* Keeps the aspect ratio from stretching */
-        margin-bottom: 8px !important;   /* Tight space above the ticker text */
-        text-align: left !important;
+        width: 90% !important;        /* Tells the layout to fill 90% of the available screen space */
+        min-width: 340px !important;   /* Sets the base floor to make sure it looks nice and bold */
+        max-width: 360px !important;   /* Hard ceiling so it matches your drawn boundary exactly */
+        height: auto !important;       /* Preserves aspect ratio safety constraints */
+        margin-left: 0 !important;     /* Flushes the element cleanly against the left layout margin */
+        margin-bottom: 20px !important;/* Creates an elegant breathing space above the ticker block */
     }
 
     .home-text h1 b span {
