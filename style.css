@@ -393,8 +393,8 @@ a{
     height: auto;
 }
 
-.sp_hero_image {
-    display: none; /* Hidden on desktop */
+.mobile-only {
+    display: none !important;
 }
 
 @media (max-width: 768px) {
@@ -413,7 +413,7 @@ a{
         display: block !important;
         position: relative !important;    /* Keeps your current layout requirement intact */
         text-align: left !important;      /* Left aligns text just like your wireframe design */
-        max-width: 85% !important;        /* Prevents your text headings from hitting the image */
+        max-width: 90% !important;        /* Prevents your text headings from hitting the image */
         z-index: 2 !important;            /* Ensures text stays crisp on top */
     }
 
@@ -423,11 +423,21 @@ a{
         text-align: left !important;
         width: 100% !important;
         justify-content: center !important;
-        font-size: 55px;
+        font-size: 65px;
     }
 
+/* 1. Explicitly hide the web version text header */
     #home .home-text h3.desktop-only {
         display: none !important;
+    }
+
+    /* 2. Style and size your new mobile typography image */
+    #home .home-text img.mobile-only.greeting-image {
+        display: block !important;       /* Reveals it on mobile screens */
+        width: 100%;         /* Fluidly scales width relative to the text container */
+        max-width: 350px !important;     /* Prevents it from ballooning up too large */
+        height: auto !important;         /* Keeps aspect ratio perfectly proportional */
+        text-align: left !important;
     }
 
     .home-text h1 b span {
@@ -436,7 +446,7 @@ a{
     position: relative;
     white-space: nowrap;
     animation: move 15s infinite;
-    font-size: 55px;
+    font-size: 65px;
     letter-spacing: 2px;
     line-height: 64px;
     padding-top: 0;
@@ -444,22 +454,6 @@ a{
 
     #home .home-text h1 b {
       padding-top: 12px;
-    }
-
-    /* 2. Explicitly target the class to pull it back into view */
-    #home .home-text h3.mobile-only {
-        font-size: 36px !important;
-        line-height: 1.2 !important;
-        text-align: left !important;
-        display: block;
-        font-family: 'Playfair Display', serif;
-        font-size: 40px;
-        color: #3a2d28;
-        font-style: italic;
-    }
-
-    #home .home-text h3.mobile-only br.force-break {
-        display: inline !important;
     }
 
     /* 5. Hide the desktop breaks to prevent strange vertical space gaps */
@@ -473,26 +467,9 @@ a{
         padding: 20px 25px !important;
     }
 
-    #home .home-img {
-        position: absolute !important;   /* Breaks it out so it overlays on top */
-        
-        /* MANUALLY CONTROL THE POSITION HERE: */
-        top: 160px !important;
-        right: 50px !important;
-        width: 156px !important;
-        transform: rotate(-12deg) !important;
-        
-        z-index: 10 !important;          /* Keeps it floating safely on the very top layer */
-    }
-
     /* 2. Standard toggle setup to ensure mobile image shows */
     .web_hero_image {
         display: none !important;
-    }
-    .sp_hero_image {
-        display: block !important;
-        width: 100% !important;
-        height: auto !important;
     }
 }
 
@@ -711,7 +688,7 @@ a{
 
 .home-img img {
     max-width: 100%;
-    width: 510px;
+    width: 490px;
     height: auto; 
 }
 
