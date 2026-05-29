@@ -431,12 +431,12 @@ a{
         display: none !important;
     }
 
-    /* 2. Style and size your new mobile typography image */
-    #home .home-text img.mobile-only.greeting-image {
-        display: block !important;       /* Reveals it on mobile screens */
-        width: 100%;         /* Fluidly scales width relative to the text container */
-        max-width: 350px !important;     /* Prevents it from ballooning up too large */
-        height: auto !important;         /* Keeps aspect ratio perfectly proportional */
+   #home .home-text img.mobile-only.greeting-image {
+        display: block !important;
+        width: 50% !important;           /* Lowered from 75% to shrink it down to size */
+        max-width: 140px !important;     /* Hard ceiling so it matches your inspect look exactly */
+        height: auto !important;         /* Keeps the aspect ratio from stretching */
+        margin-bottom: 8px !important;   /* Tight space above the ticker text */
         text-align: left !important;
     }
 
