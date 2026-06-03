@@ -117,7 +117,7 @@ body {
 .inside_items{
   display: none;
   position: absolute;
-  top:80px;
+  top:82px;
   left: 45px;
 }
 
@@ -126,6 +126,7 @@ body {
   padding: 0 30px;
   background-color: #fffaf3;
   list-style: none;
+  text-align: center;
 }
 .inside_items li:hover{
   background-color: #e0c0b0;
@@ -134,12 +135,14 @@ body {
 .language-item .language-label:before {
     content: none !important;
     display: none !important;
+    transition: none !important;
 }
 
 /* This stops the line from appearing inside your dropdown (EN/JP) */
 .inside_items li a:before {
     content: none !important;
     display: none !important;
+    transition: none !important;
 }
 
 .nav-wrapper .navbar .inside_items ul > li a {
@@ -155,6 +158,8 @@ a{
 	text-decoration: none;
 	color:black;
 	font-size: 25px;
+  text-align: center;
+  align-items: center;
 }
 
 .nav-wrapper .navbar .show ul > li a {
@@ -310,6 +315,28 @@ a{
   
 }
 
+.nav-wrapper hr,
+.navbar hr,
+.nav-menu hr,
+#home hr {
+    display: none !important;
+    height: 0 !important;
+    border: none !important;
+}
+
+/* 2. Remove bottom borders from the header containers that might be drawing it */
+header,
+.nav-wrapper,
+.navbar,
+.nav-container {
+    border-bottom: none !important;
+}
+
+/* 3. Dropdown Box adjustment: If you want to use the white box to mask MORE of the line without deleting it, widen the box slightly */
+.inside_items_2 {
+    min-width: 120px !important; /* Makes the box wider to mask more of the line if it's structural */
+}
+
 .nav-wrapper .navbar> ul >li .language-item {
   transition: none;
   text-decoration: none;
@@ -424,6 +451,7 @@ a{
         width: 100% !important;
         justify-content: center !important;
         font-size: 65px;
+         max-height: 80px;
     }
 
 /* 1. Explicitly hide the web version text header */
@@ -438,7 +466,6 @@ img.greeting-image {
         max-width: 360px !important;   /* Hard ceiling so it matches your drawn boundary exactly */
         height: auto !important;       /* Preserves aspect ratio safety constraints */
         margin-left: 0 !important;     /* Flushes the element cleanly against the left layout margin */
-        margin-bottom: 20px !important;/* Creates an elegant breathing space above the ticker block */
     }
 
     .home-text h1 b span {
@@ -872,7 +899,6 @@ img.greeting-image {
   }
 }
 
-
 .skills {
     padding-top: 30px;
     display: flex;
@@ -948,6 +974,42 @@ img.greeting-image {
   }
 }
 
+.cv-btn-wrapper {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;   /* Centers inline/inline-block items */
+    margin-top: 30px !important;     /* Creates clean spacing below the paragraph text */
+    margin-bottom: 0 !important;
+}
+
+/* Keep your button crisp and cleanly styled */
+.cv-download-btn {
+    display: inline-block !important;
+    background-color: #ffffff !important;
+    color: #3a2d28 !important;
+    text-decoration: none !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    padding: 18px 38px !important;
+    border-radius: 50px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    
+    /* Reset individual margins since the parent wrapper handles positioning now */
+    margin-top: 370px;  
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .cv-btn-wrapper {  /* Centers inline/inline-block items */
+    margin-top: 120px !important;
+}
+  .cv-download-btn {
+    font-size: 16px !important;
+  }
+}
+
 .mid-1 {
     height: 777px;
     width: 100%;
@@ -956,14 +1018,14 @@ img.greeting-image {
 #projects {
     width: 90%;
     margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 30px;
     position: relative;
     z-index: 5;
 }
 #projects h2 {
     text-align: left;
     position: relative;
-    padding-top: 350px;
+    padding-top: 40px;
     font-family: 'Playfair Display', serif;
     font-size: 55px;
     font-style: italic;
@@ -978,7 +1040,7 @@ img.greeting-image {
 
 @media (max-width: 768px) {
   #projects h2{
-    padding-top: 470px;
+    padding-top: 22px;
   }
 }
 
@@ -1030,7 +1092,7 @@ img.greeting-image {
 }
 
 .project-row:hover {
-  color: #ffffff; /* Optional: Make text white when background gets dark */
+  color: #746256; /* Optional: Make text white when background gets dark */
 }
 
 .project-left {
