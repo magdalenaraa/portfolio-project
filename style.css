@@ -993,7 +993,7 @@ img.greeting-image {
     font-weight: 500 !important;
     padding: 18px 38px !important;
     border-radius: 50px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.11) !important;
     
     /* Reset individual margins since the parent wrapper handles positioning now */
     margin-top: 370px;  
