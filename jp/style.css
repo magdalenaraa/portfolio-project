@@ -10,8 +10,59 @@ html {
     scroll-behavior: smooth;
   }
 
-.font-josefin {
-    font-family: 'Josefin Sans', sans-serif;
+.zen-kaku-gothic-antique-light {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-antique-regular {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-antique-medium {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-antique-bold {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-antique-black {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.noto-sans-jp {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kiwi-maru-light {
+  font-family: "Kiwi Maru", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kiwi-maru-regular {
+  font-family: "Kiwi Maru", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kiwi-maru-medium {
+  font-family: "Kiwi Maru", serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .font-playfair {
@@ -788,8 +839,8 @@ img.greeting-image {
 
 .about-paragraph {
   display: flex;
-  gap: 60px;
-  padding: 60px;
+  gap: 56px;
+  padding: 61px;
   max-width: 1024px;
   margin: 0 auto;
   background-color: #3a2d28;
@@ -808,9 +859,10 @@ img.greeting-image {
 }
 
 .self-intro p {
-  font-size: 1rem;
+  font-size: 18px;
   line-height: 1.8;
-
+  font-family: "Kiwi Maru", serif;
+  font-weight: 300;
   color: #ede9e3;
     font-weight: 300;
     margin: 30px 0;
@@ -976,6 +1028,8 @@ img.greeting-image {
 }
 
 .cv-btn-wrapper {
+    font-family: "Noto Sans JP";  
+    font-weight: 500;
     display: block !important;
     width: 100% !important;
     text-align: center !important;   /* Centers inline/inline-block items */
