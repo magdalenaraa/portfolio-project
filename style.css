@@ -338,7 +338,7 @@ header,
     min-width: 120px !important; /* Makes the box wider to mask more of the line if it's structural */
 }
 
-.nav-wrapper .navbar> ul >li .language-item {
+.nav-wrapper .navbar> ul >li .language-item-box {
   transition: none;
   text-decoration: none;
 }
@@ -351,7 +351,7 @@ header,
 
   /* LANGUAGE DROPDOWN */
 
-  .language-item input {
+  .language-item-box input {
     display: none;
   }
 

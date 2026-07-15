@@ -160,7 +160,7 @@ body {
     width: 100%;
 }
 
-.nav-wrapper .navbar .language-item a:hover::before{
+.nav-wrapper .navbar .language-item-box a:hover::before{
     content: none !important;
     display: none !important;
 }
@@ -183,7 +183,7 @@ body {
   background-color: #e0c0b0;
 }
 
-.language-item .language-label:before {
+.language-item-box .language-label:before {
     content: none !important;
     display: none !important;
     transition: none !important;
@@ -389,7 +389,7 @@ header,
     min-width: 120px !important; /* Makes the box wider to mask more of the line if it's structural */
 }
 
-.nav-wrapper .navbar> ul >li .language-item {
+.nav-wrapper .navbar> ul >li .language-item-box {
   transition: none;
   text-decoration: none;
 }
@@ -402,7 +402,7 @@ header,
 
   /* LANGUAGE DROPDOWN */
 
-  .language-item input {
+  .language-item-box input {
     display: none;
   }
 
