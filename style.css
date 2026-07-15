@@ -1003,6 +1003,9 @@ img.greeting-image {
     top: 0 !important;
 }
 
+
+
+
 @media (max-width: 768px) {
   .cv-btn-wrapper {  /* Centers inline/inline-block items */
     margin-top: 120px !important;
@@ -1017,6 +1020,13 @@ img.greeting-image {
     width: 100%;
     position: relative;
 }
+
+@media (max-width: 768px) {
+.mid-1 {
+    height: 560px !important;
+  }
+}
+
 #projects {
     width: 90%;
     margin: 0 auto;
@@ -1147,38 +1157,59 @@ img.greeting-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;       /* Adds generous breathing room above and below the banner */
+  padding: 60px 20px;
   box-sizing: border-box;
 }
 
- /* Main dark brown container banner */
+/* ========================================================== */
+/* 🖥️ DESKTOP VERSION                                         */
+/* ========================================================== */
 .languages-container {
-  background-color: #3d2f28; /* Dark brown background */
+  background-color: #3d2f28; 
   border-radius: 24px;
-  padding: 40px 50px;
-  max-width: 900px;
+  padding: 60px 80px; 
+  max-width: 1200px; 
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 40px;
   box-sizing: border-box;
 }
 
-/* --- Left Title Column --- */
+/* Flexbox reordering on desktop: Title -> Avatar -> List */
+.top-row-wrapper {
+  display: contents; 
+}
+.title-column { order: 1; }
+.avatar-column { order: 2; }
+.languages-list { 
+  order: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 24px; 
+  flex-grow: 1;
+  max-width: 500px; 
+}
+
+/* ❌ DIVIDER HIDDEN ON DESKTOP */
+.vertical-divider { 
+  display: none; 
+}
+
 .title-column h2 {
-  color: #eaddcd; /* Light text color */
+  color: #eaddcd;
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 3.5rem; 
   line-height: 1.1;
-  font-weight: normal;
 }
 
 .title-italic {
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
   display: block;
-  font-size: 1.8rem;
-  margin-bottom: 5px;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
 }
 
 .title-bold {
@@ -1187,107 +1218,35 @@ img.greeting-image {
   font-weight: 700;
 }
 
-/* --- Vertical Divider --- */
-.vertical-divider {
-  width: 2px;
-  height: 100px;
-  background-color: #8c7b6e; /* Subtle muted line */
-  opacity: 0.6;
-}
-
-/* --- Middle Language List Column --- */
-.languages-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  flex-grow: 1;
-}
-
-/* Update the main banner container */
-.languages-container {
-  background-color: #3d2f28; 
-  border-radius: 24px;
-  
-  /* Increase padding inside to make the block taller/roomier */
-  padding: 60px 80px; 
-  
-  /* Swap max-width to match the layout width of your header/footer lines */
-  max-width: 1200px; 
-  width: 100%;
-  
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Spreads components out perfectly */
-  gap: 50px;
-  box-sizing: border-box;
-}
-
-/* Make the title text larger to fill the left side */
-.title-column h2 {
-  color: #eaddcd;
-  margin: 0;
-  font-size: 3.5rem; /* Increased from 2.5rem */
-  line-height: 1.1;
-}
-
-.title-italic {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
-  display: block;
-  font-size: 2.2rem; /* Increased from 1.8rem */
-  margin-bottom: 8px;
-}
-
-/* Give the middle list more presence */
-.languages-list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px; /* Increased spacing between language boxes */
-  flex-grow: 1;
-  max-width: 500px; /* Gives the text bars a defined, longer width */
-}
-
-/* Ensure the main pill structure allows the tail to overflow outward */
+/* Base Pill settings */
 .language-item {
   background-color: #eaddcd;
   color: #3d2f28;
-  padding: 16px 32px;
+  padding: 16px 32px; 
   border-radius: 40px;
-  font-size: 1.1rem;
+  font-size: 1.1rem; 
   font-weight: 500;
   position: relative;
-  /* Make sure overflow is NOT hidden, otherwise the tail gets cut off */
-  overflow: visible; 
+  overflow: visible;
 }
 
-/* The curved speech bubble tail trick */
+/* Desktop tails pointing LEFT towards the middle avatar */
 .language-item::after {
   content: "";
   position: absolute;
-  
-  /* Positions the tail on the right side, lower half */
-  right: -12px; 
-  bottom: 12px;
-  
-  /* Creates a small square box to curve */
-  width: 24px;
-  height: 20px;
-  
-  /* Match the color of the pill */
+  left: -10px; 
+  bottom: 14px;
+  width: 22px;
+  height: 18px;
   background-color: #eaddcd; 
-  
-  /* This creates a curved wedge pointing downwards/outwards */
-  border-bottom-left-radius: 100px 70px;
-  border-bottom-right-radius: 40px 10px;
-  
-  /* Uses a mask shape to make it look like an organic swoosh */
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  border-bottom-right-radius: 100px 70px;
+  border-bottom-left-radius: 40px 10px;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
 }
 
-/* Scale up the avatar circle slightly to match the larger banner */
 .avatar-circle {
-  width: 210px; /* Increased from 130px */
-  height: 210px; /* Increased from 130px */
+  width: 160px; 
+  height: 160px; 
   background-color: #eaddcd;
   border-radius: 50%;
   overflow: hidden;
@@ -1302,6 +1261,93 @@ img.greeting-image {
   object-fit: contain;
 }
 
+@media (min-width: 769px) {
+  .desktop-br { display: inline; }
+}
+
+/* ========================================================== */
+/* 📱 SMARTPHONE RESPONSIVE STYLES                            */
+/* ========================================================== */
+@media (max-width: 768px) {
+  
+  .languages-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  /* Reset desktop alignment rules */
+  .title-column { order: unset; }
+  .avatar-column { order: unset; }
+  .languages-list { order: unset; }
+
+  /* Activate top bar structure (Title left, Avatar right) */
+  .top-row-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+  }
+
+  .title-column {
+    text-align: left;
+  }
+  .title-column h2 {
+    font-size: 2.2rem; 
+    line-height: 1.1;
+  }
+  .title-italic {
+    font-size: 1.4rem;
+  }
+  .desktop-br {
+    display: block; 
+  }
+
+  .avatar-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .avatar-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /*  DIVIDER VISIBLE ON MOBILE: Becomes a clean accent underline */
+  .vertical-divider {
+    display: block;    /* Turns it back on for mobile screen widths */
+    width: 100%;       
+    height: 2px;      
+    background-color: #8c7b6e;
+    opacity: 0.4;
+    margin: 10px 0;
+  }
+
+  .languages-list {
+    width: 100%;
+    align-items: center;
+    gap: 14px;
+    max-width: 100%;
+  }
+
+  /* Symmetrical standard language pills */
+  .language-item {
+    width: 100%;       
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 14px 20px;
+    border-radius: 40px;
+    box-sizing: border-box;
+  }
+
+  /* Hide the speech bubble pointer shapes safely on mobile layout */
+  .language-item::after {
+    display: none !important;
+  }
+}
 
 .contact {
     display: flex;
