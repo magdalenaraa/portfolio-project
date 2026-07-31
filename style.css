@@ -1016,14 +1016,14 @@ img.greeting-image {
 }
 
 .mid-1 {
-    height: 610px;
+    height: 718px;
     width: 100%;
     position: relative;
 }
 
 @media (max-width: 768px) {
 .mid-1 {
-    height: 470px !important;
+    height: 560px !important;
   }
 }
 
