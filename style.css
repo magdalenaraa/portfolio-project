@@ -1157,7 +1157,7 @@ img.greeting-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;
+  padding: 50px 65px;
   box-sizing: border-box;
 }
 
@@ -1167,7 +1167,7 @@ img.greeting-image {
 .languages-container {
   background-color: #3d2f28; 
   border-radius: 24px;
-  padding: 60px 80px; 
+  padding: 60px 70px; 
   max-width: 1200px; 
   width: 100%;
   display: flex;
@@ -1269,6 +1269,10 @@ img.greeting-image {
 /* 📱 SMARTPHONE RESPONSIVE STYLES                            */
 /* ========================================================== */
 @media (max-width: 768px) {
+
+  .languages-section {
+    padding: 50px 35px;
+}
   
   .languages-container {
     flex-direction: column;
@@ -1289,6 +1293,7 @@ img.greeting-image {
     justify-content: space-between;
     align-items: center;
     padding: 0 25px;
+    gap: 15px;
   }
 
   .title-column {
@@ -1497,6 +1502,65 @@ img.greeting-image {
    }
 
   }
+
+.contact-form {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.2rem;
+  margin-inline: auto;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.contact-form h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #524a4e;
+  margin: 0;
+}
+
+.contact-form p {
+  margin-top: 0.5rem;
+  font-size: 16px;
+}
+
+.contact-form form {
+  text-align: left;
+  padding-top: 0.5rem;
+}
+
+.contact-form label {
+  color: #524a4e;
+}
+
+.contact-form input:not([type="submit"]) {
+  height: 2.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0.3rem;
+  margin: 0.3rem 0 1rem 0;
+  background-color: #f6f6f6;
+}
+
+.contact-form input[type="submit"] {
+  background-color: #524a4e;
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 0.8rem;
+  margin-bottom: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
 
 
   
