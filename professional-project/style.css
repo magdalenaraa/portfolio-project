@@ -1,0 +1,758 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+.font-josefin {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+    background-color: #e3d0bf;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    
+}
+
+.nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background-color: #ede9e3b4;
+    backdrop-filter: blur(20px);
+}
+.nav-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-bottom: 0px;
+}
+.nav-wrapper .logo {
+    max-width: 115px;
+}
+.nav-wrapper .logo img {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.nav-wrapper .navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-wrapper .navbar.papa ul{
+	list-style-type: none;
+}
+
+.nav-wrapper .navbar> ul >li{
+  display: block;
+  float: left;
+  height: 70px;
+  position: relative;
+}
+
+.nav-wrapper .navbar > ul >li a {
+  background-image: linear-gradient(
+      to right,
+      #3a2d28,
+      #3a2d28 50%,
+      #3a2d28 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.nav-wrapper .navbar > ul >li a:before{
+    content: '';
+    background: #3a2d28;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    transition: all 0.3s ease-in-out;
+}
+.nav-wrapper .navbar > ul >li a:hover {
+   background-position: 0;
+} 
+.nav-wrapper .navbar a:hover::before{
+    width: 100%;
+}
+
+.nav-wrapper .navbar .language-item a:hover::before{
+    content: none !important;
+    display: none !important;
+}
+
+.inside_items{
+  display: none;
+  position: absolute;
+  top:82px;
+  left: 45px;
+}
+
+.inside_items li{
+  line-height: 50px;
+  padding: 0 30px;
+  background-color: #fffaf3;
+  list-style: none;
+  text-align: center;
+}
+.inside_items li:hover{
+  background-color: #e0c0b0;
+}
+
+.language-item .language-label:before {
+    content: none !important;
+    display: none !important;
+    transition: none !important;
+}
+
+/* This stops the line from appearing inside your dropdown (EN/JP) */
+.inside_items li a:before {
+    content: none !important;
+    display: none !important;
+    transition: none !important;
+}
+
+.nav-wrapper .navbar .inside_items ul > li a {
+  padding: 0;
+  text-decoration: none;
+  transition: none;
+}
+
+li:hover .inside_items{
+  display: block;
+}
+a{
+	text-decoration: none;
+	color:black;
+	font-size: 25px;
+  text-align: center;
+  align-items: center;
+}
+
+.nav-wrapper .navbar .show ul > li a {
+  transition: none;
+}
+
+.show::after{
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 9px solid black;
+      position: absolute;
+      top: 25px;
+      right:1px;
+}
+
+.hamburger-navbar-sp {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .nav-wrapper .logo img {
+    width: 80%;
+    margin-top: 14px;
+  }
+
+  .nav-wrapper .navbar {
+    display: none;
+  }
+
+  .hamburger-navbar-sp {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;          /* hidden */
+    width: 75%;
+    height: 100vh;
+    background: #2f3f53;   /* dark blue like 2nd pic */
+    transition: right 0.4s ease;
+    z-index: 999;
+    padding-top: 80px;
+  }
+
+  /* Burger Icon Container */
+.burger-container {
+  position: fixed;
+  top: 28px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 5px;
+  backdrop-filter: blur(10px);
+}
+
+/* Burger Icon Lines */
+.burger-line {
+  width: 100%;
+  height: 3px;
+  background-color: #3a2d28;
+  border-radius: 2px;
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Checkbox Hack */
+#burger-toggle {
+  display: none;
+}
+
+/* Navigation Styles */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background: #3a2d28;
+  transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+  box-shadow: -4px 0 15px #00000033;
+  overflow-y: auto;
+  padding-top: 100px;
+}
+
+.nav-menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #ffffff0d;
+  backdrop-filter: blur(10px);
+}
+
+.nav-menu ul {
+  list-style-type: none;
+}
+
+.nav-menu ul li {
+  margin: 0 15px;
+  border-bottom: 1px solid #ffffff1a;
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+  font-weight: 300;
+  font-size: 23px;
+  position: relative;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.nav-menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: left 0.3s ease;
+}
+
+.nav-menu ul li a:hover::after {
+  left: 0;
+}
+
+/* Burger Icon Animation on Checkbox Checked */
+#burger-toggle:checked ~ .burger-container .burger-line:nth-child(3) {
+        transform: rotate(-50deg) translate(7px, -5px);
+        background-color: #f2e8df;
+    }
+}
+
+#burger-toggle:checked ~ .burger-container .burger-line:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 5px);
+        background-color: #f2e8df;
+    }
+
+#burger-toggle:checked ~ .burger-container .burger-line:nth-child(2) {
+  opacity: 0;
+  
+}
+
+.nav-wrapper hr,
+.navbar hr,
+.nav-menu hr,
+#home hr {
+    display: none !important;
+    height: 0 !important;
+    border: none !important;
+}
+
+/* 2. Remove bottom borders from the header containers that might be drawing it */
+header,
+.nav-wrapper,
+.navbar,
+.nav-container {
+    border-bottom: none !important;
+}
+
+/* 3. Dropdown Box adjustment: If you want to use the white box to mask MORE of the line without deleting it, widen the box slightly */
+.inside_items_2 {
+    min-width: 120px !important; /* Makes the box wider to mask more of the line if it's structural */
+}
+
+.nav-wrapper .navbar> ul >li .language-item-box {
+  transition: none;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+  #burger-toggle:checked ~ .nav-menu {
+    right: 0;
+  }
+
+  /* LANGUAGE DROPDOWN */
+
+  .language-item-box input {
+    display: none;
+  }
+
+  .language-label {
+    display: block;
+    cursor: pointer;
+    padding: 15px;
+    color: white;
+    font-weight: 300;
+    font-size: 23px;
+  }
+
+  .inside_items_2 {
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  #lang-toggle:checked ~ .inside_items_2 {
+    max-height: 200px;
+  }
+
+  .inside_items_2 a {
+    color: white;
+    text-decoration: none;
+  }
+
+}
+
+/* Content Container */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
+/* Page Title Accent Line */
+.page-title {
+  font-family: 'Playfair Display', Georgia, serif; /* Styled serif font */
+  font-size: 28px;
+  font-style: italic;
+  display: inline-block;
+  border-left: 12px solid #2b2b2b; /* Dark left accent mark */
+  padding-left: 10px;
+  margin-bottom: 40px;
+}
+
+/* Project Cards */
+.project-card {
+  margin-bottom: 50px;
+}
+
+.project-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.media-placeholder {
+  width: 100%;
+  height: 380px;
+  background-color: #b5b5b5; /* Grey placeholder box */
+}
+
+/* View More Button Container */
+.btn-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns button to the right */
+  margin-top: 16px;
+}
+
+.view-more-btn {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.view-more-btn:hover {
+  opacity: 0.85;
+}
+
+/* Base Modal Hidden State */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Window Base */
+.modal-content {
+  background: #fbf7f0; /* Cream background matching your mockup */
+  border-radius: 12px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Layout Visibility Switching */
+.desktop-layout { display: none; }
+.mobile-layout { display: block; }
+
+/* Image Grid Styles */
+.grid-1-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.img-placeholder {
+  background-color: #d9d9d9;
+  height: 180px;
+  border-radius: 4px;
+}
+
+/* Desktop Styles (Trigger Layout ①) */
+@media (min-width: 768px) {
+  .modal-content {
+    width: 700px;
+  }
+  .desktop-layout { display: block; }
+  .mobile-layout { display: none; }
+}
+
+/* Mobile Styles (Trigger Layout ②) */
+@media (max-width: 767px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Window Base */
+.modal-content {
+  background: #fbf7f0; /* Cream background matching your mockup */
+  border-radius: 12px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Layout Visibility Switching */
+.desktop-layout { display: none; }
+.mobile-layout { display: block; }
+
+/* Image Grid Styles */
+.grid-1-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.img-placeholder {
+  background-color: #d9d9d9;
+  height: 180px;
+  border-radius: 4px;
+}
+
+/* Desktop Styles (Trigger Layout ①) */
+@media (min-width: 768px) {
+  .modal-content {
+    width: 700px;
+  }
+  .desktop-layout { display: block; }
+  .mobile-layout { display: none; }
+}
+
+/* Mobile Styles (Trigger Layout ②) */
+@media (max-width: 767px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #3a2d28;
+    padding: 55px 130px;
+    height: 300px;
+    margin-top: 40px;
+}
+.contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: 600;
+    color: #ede9e3;
+    padding-bottom: 20px;
+    border-bottom: #d9c1a4 solid 2px;
+    margin-top: 20px;
+}
+.contact-info p {
+    color: #ede9e3;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 1.5;
+}
+.contact-info p span {
+    font-weight: 500;
+}
+.logo-creds img {
+    margin-bottom: 20px;
+    float: right;
+}
+.logo-creds p  {
+    color: #ede9e3;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: right;
+    margin-top: 50px;
+}
+.socmed {
+    margin:0;
+    padding:0;
+    display:flex;
+    z-index: 10;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+.socmed img {
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.socmed a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+
+    .contact {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 40px 30px;
+        width: 100%;
+    }
+
+    .contact-info {
+        width: 80%;
+    }
+
+    .logo-creds img {
+        float: none;
+    }
+
+    .logo-creds p {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .socmed {
+        justify-content: start;
+    }
+
+    .socmed img{
+        width: 50%;
+    }
+
+    .contact h2 {
+        font-size: 28px;
+        margin: 0;
+        padding-bottom: 10px;
+        text-align: start;
+    }
+
+    .contact-info p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .contact {
+    position: relative;
+  }
+
+  .logo-creds {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: inline-block;
+  }
+
+   .logo-creds img {
+    width: 60px;
+    float: right;
+    margin-bottom: 0;
+   }
+
+   .logo-creds p {
+    font-size: 14px;
+   }
+}
+
+  @media (max-width: 425px)  {
+ .contact {
+    position: relative;
+  }
+
+  .logo-creds {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+   .logo-creds img {
+    width: 40px;
+    margin-bottom: 0;
+   }
+
+   .logo-creds p {
+    font-size: 12px;
+   }
+
+  }
+
+
+
+
+  
+  
+
+
+
+
+

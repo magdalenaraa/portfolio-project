@@ -109,75 +109,6 @@ body {
     width: 100%;
 }
 
-.nav-wrapper .navbar .language-item a:hover::before{
-    content: none !important;
-    display: none !important;
-}
-
-.inside_items{
-  display: none;
-  position: absolute;
-  top:82px;
-  left: 45px;
-}
-
-.inside_items li{
-  line-height: 50px;
-  padding: 0 30px;
-  background-color: #fffaf3;
-  list-style: none;
-  text-align: center;
-}
-.inside_items li:hover{
-  background-color: #e0c0b0;
-}
-
-.language-item .language-label:before {
-    content: none !important;
-    display: none !important;
-    transition: none !important;
-}
-
-/* This stops the line from appearing inside your dropdown (EN/JP) */
-.inside_items li a:before {
-    content: none !important;
-    display: none !important;
-    transition: none !important;
-}
-
-.nav-wrapper .navbar .inside_items ul > li a {
-  padding: 0;
-  text-decoration: none;
-  transition: none;
-}
-
-li:hover .inside_items{
-  display: block;
-}
-a{
-	text-decoration: none;
-	color:black;
-	font-size: 25px;
-  text-align: center;
-  align-items: center;
-}
-
-.nav-wrapper .navbar .show ul > li a {
-  transition: none;
-}
-
-.show::after{
-      content: '';
-      width: 0;
-      height: 0;
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      border-top: 9px solid black;
-      position: absolute;
-      top: 25px;
-      right:1px;
-}
-
 .hamburger-navbar-sp {
   display: none;
 }
@@ -333,55 +264,11 @@ header,
     border-bottom: none !important;
 }
 
-/* 3. Dropdown Box adjustment: If you want to use the white box to mask MORE of the line without deleting it, widen the box slightly */
-.inside_items_2 {
-    min-width: 120px !important; /* Makes the box wider to mask more of the line if it's structural */
-}
-
-.nav-wrapper .navbar> ul >li .language-item-box {
-  transition: none;
-  text-decoration: none;
-}
-
 @media (max-width: 768px) {
 
   #burger-toggle:checked ~ .nav-menu {
     right: 0;
   }
-
-  /* LANGUAGE DROPDOWN */
-
-  .language-item-box input {
-    display: none;
-  }
-
-  .language-label {
-    display: block;
-    cursor: pointer;
-    padding: 15px;
-    color: white;
-    font-weight: 300;
-    font-size: 23px;
-  }
-
-  .inside_items_2 {
-    list-style: none;
-    padding-left: 20px;
-    margin: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  #lang-toggle:checked ~ .inside_items_2 {
-    max-height: 200px;
-  }
-
-  .inside_items_2 a {
-    color: white;
-    text-decoration: none;
-  }
-
 }
 
 .top {
@@ -1016,7 +903,7 @@ img.greeting-image {
 }
 
 .mid-1 {
-    height: 718px;
+    height: 640px;
     width: 100%;
     position: relative;
 }
